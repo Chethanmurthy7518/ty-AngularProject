@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ty-AngularProject"
+    }
+  },
+  "defaultProject": "ty-AngularProject",
+  "cli": {
+    "analytics": false
+  }
 }
