@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { Basic } from './basic.component';
 import { LoginComponent } from './login/login.component';
+import { SiginComponent } from './sigin/sigin.component';
 
 
 
@@ -11,7 +12,8 @@ import { LoginComponent } from './login/login.component';
   declarations: [
     AppComponent,
     Basic,
-    LoginComponent
+    LoginComponent,
+    SiginComponent
     
   ],
   imports: [
