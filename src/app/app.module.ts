@@ -5,6 +5,10 @@ import { AppComponent } from './app.component';
 import { Basic } from './basic.component';
 import { LoginComponent } from './login/login.component';
 import { SiginComponent } from './sigin/sigin.component';
+import { FormsModule } from '@angular/forms';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { ProjectComponent } from './project/project.component';
 
 
 
@@ -13,11 +17,15 @@ import { SiginComponent } from './sigin/sigin.component';
     AppComponent,
     Basic,
     LoginComponent,
-    SiginComponent
+    SiginComponent,
+    ParentComponent,
+    ChildComponent,
+    ProjectComponent
     
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

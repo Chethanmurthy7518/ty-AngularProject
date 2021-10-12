@@ -1,7 +1,11 @@
-body{
-    background-color: chocolate;
-}
+
 h1{
     color: bisque;
     font-size: 200px;
+}
+
+.mainDiv{
+    background-color:coral;
+    font-size: x-large;
+    color: darkgrey;
 }

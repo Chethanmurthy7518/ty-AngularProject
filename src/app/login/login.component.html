@@ -1,3 +1,50 @@
 <h1>Welcome To ANGULAR 8</h1>
-<h2>SECOND</h2>
-<p>PARAGRAPH</p>
+<!-- <h2>SECOND</h2>
+<p>PARAGRAPH</p> -->
+
+<h1>{{greetings}}</h1>
+
+<label for="">Enter UserName</label>
+<input type="text" [value]="userName"><br>
+
+
+<img [src]="imgurl" alt="">
+
+<div [style.color]="fontcolor">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero minus explicabo inventore omnis velit sapiente, alias enim beatae, ex mollitia nobis odio sunt. Magni, saepe iste. Veniam quos quas provident!
+</div>
+<div [style]="multistyle">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero minus explicabo inventore omnis velit sapiente, alias enim beatae, ex mollitia nobis odio sunt. Magni, saepe iste. Veniam quos quas provident!
+</div>
+<div [class]="isSpecial ? 'mainDiv':'mainDiv1'">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam voluptates laudantium numquam earum, et, exercitationem alias ipsum itaque laboriosam adipisci deserunt, porro laborum possimus esse. Et repudiandae debitis quam inventore.
+</div>
+
+<button (click)="displayMessage()">DisplayText in Console</button>
+
+<table border="1">
+    <thead>
+        <th [attr.colspan]="columnSpan">tabel Header</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td >Name</td>
+            <td [attr.rowspan]="rowSpan">Chethan</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            
+        </tr>
+        <tr>
+            <td>AGE</td>
+            <td>26</td>
+        </tr>
+        <tr>
+            <td>Area</td>
+            <td>Bangalore</td>
+        </tr>
+    </tbody>
+</table>
+
+<input type="text" [(ngModel)]="user">
+<h2>{{user}}</h2>

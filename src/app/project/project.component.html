@@ -1,0 +1,57 @@
+
+<!-- ----------------------------------Interpolation----------------------- -->
+<h1>{{message}}</h1>
+<!-- -------------------------------------PropertyBinding-------------------- -->
+<label for="">Enter the User Name</label>
+<input type="text" [value]="Uname"><br>
+
+<img [src]="imglink" alt="">
+<!-- <img src="{{imglink}}" alt=""> ---------Interpolation in Property ------ -->
+
+<!-- ----------------------Style Binding--------------------------------- -->
+
+<div [style.color]="fontcol">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Recusandae adipisci eaque quisquam optio enim quo fugiat laudantium, sapiente deserunt dolore est, doloremque, rerum et sequi dicta natus nulla omnis eius!</div>
+<div [style]="multisty">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error quos quidem nam, officiis inventore minima obcaecati porro in distinctio eveniet nobis ipsam sequi perferendis. Totam commodi debitis ab enim rerum!</div>
+
+<!-- ------------------------------Class Binding--------------------------------- -->
+
+<div [class]="isSpec ? 'mainDiv':'mainDiv1'">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad est maiores, excepturi accusamus esse eum iure consequatur. Perspiciatis illum facere impedit recusandae consequuntur vitae neque nostrum tenetur! Sapiente, ratione molestiae!</div>
+
+<!-- --------------------Event Binding--------------------------------- -->
+
+<button (click)="displayMes()">Display</button>
+
+
+<!-- ----------------------------------AttributeBinding-------------------- -->
+
+<table border="1">
+    <thead>
+        <th [attr.colspan]="col">Tabel HEADER</th>
+    </thead>
+    <tbody>
+        <tr>
+            <th>NAME</th>
+            <td [attr.rowspan]="row">Chethan</td>
+        </tr>
+        <tr>
+            <th>NAme</th>
+            <!-- <td>26</td> -->
+        </tr>
+        <tr>
+            <th>DES</th>
+            <td>DEV</td>
+        </tr>
+        <tr>
+            <th>SAL</th>
+            <td>NO</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+<!-- ----------------------TwoWayDataBinding---------------------- -->
+<input type="text" [(ngModel)]="write">
+
+<h1>{{write}}</h1>
