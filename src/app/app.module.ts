@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { ProjectComponent } from './project/project.component';
+import { Project1Component } from './project1/project1.component';
 
 
 
@@ -20,7 +21,8 @@ import { ProjectComponent } from './project/project.component';
     SiginComponent,
     ParentComponent,
     ChildComponent,
-    ProjectComponent
+    ProjectComponent,
+    Project1Component
     
   ],
   imports: [

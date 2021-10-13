@@ -27,6 +27,7 @@ multisty="color:black;background-color:white;width:200px"
 isSpec=false
 
 
+
 // --------------------Event Binding----------------
 
 displayMes(){
@@ -37,4 +38,7 @@ col=2;
 row=2;
 
 write="Something"
+val ="This is From parent to Parent1"
 }
+
+
