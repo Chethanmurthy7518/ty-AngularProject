@@ -4,3 +4,15 @@
 
     <button type="button" (click)="passData()">ButtonInChild</button>
 </div>
+
+<div #main>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque nihil earum dolore! Quae iste vel ipsum? Fugiat voluptates eveniet animi, recusandae, error maiores adipisci soluta nam consequuntur doloribus quod tempora!
+</div>
+<div class="card col-md-6 m-auto ">
+    <div class="card-body "  *ngFor="let emp of data">
+        <h2>Name: <span>{{emp.Name}}</span></h2>
+        <h5>Age: <span> {{emp.Age}}</span></h5>
+        <h5>Designation:<span>  {{emp.Designation}}</span></h5>
+        <h5>Salary: <span>{{emp.Salary}}</span></h5>
+    </div>
+</div>

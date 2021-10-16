@@ -10,6 +10,7 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { ProjectComponent } from './project/project.component';
 import { Project1Component } from './project1/project1.component';
+import { AppRoutingModule } from './app-routing-module';
 
 
 
@@ -27,7 +28,8 @@ import { Project1Component } from './project1/project1.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

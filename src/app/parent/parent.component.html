@@ -5,12 +5,12 @@
 
 
 <!-- <h1>{{messageFromChild}}</h1> -->
-<div class="card mb-1">
-    <div class="card-body bg-dark text-white text-center " *ngIf="isDisplay">
-        <h2>Name: <span>{{Name}}</span></h2>
-        <h5>Age: <span> {{Age}}</span></h5>
-        <h5>Designation:<span>  {{Designation}}</span></h5>
-        <h5>Salary: <span>{{salary}}</span></h5>
+<!-- <div class="card mb-1">
+    <div class="card-body bg-dark text-white text-center  "  *ngFor="let emp of employee">
+        <h2>Name: <span>{{emp.Name}}</span></h2>
+        <h5>Age: <span> {{emp.Age}}</span></h5>
+        <h5>Designation:<span>  {{emp.Designation}}</span></h5>
+        <h5>Salary: <span>{{emp.Salary}}</span></h5>
     </div>
-</div>
-<app-child [count]="counter" (message)="empData($event)"></app-child>
+</div> -->
+<app-child [data]="employee" (message)="empData($event)"></app-child>
