@@ -1,0 +1,176 @@
+<!-- <div class="card" style="width: 25rem;">
+    <h1>Register Page</h1>
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <!-- <i class="far fa-user fa-5x"></i>
+    <div class="card-body">
+
+        <form #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
+            <table>
+                <tr>
+                    <td>
+                        <label>Enter UserName:</label>
+                        <input type="text" ngModel name="userName" placeholder="Enter Your Name">
+                    </td>
+                </tr>
+                <tr> -->
+                    <!-- <td>
+                        <label>Enter Email:</label>
+                        <input type="text" ngModel name="mailId" placeholder="Enter Email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Enter Id:</label>
+                        <input type="text" ngModel name="userId" placeholder="Enter User Id">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Enter Address:</label>
+                        <input type="text" ngModel name="address" placeholder="Enter Your Address">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label>Enter Password:</label>
+                        <input type="password" ngModel name="password" placeholder="Create Password">
+                    </td>
+                </tr> -->
+
+<!-- 
+                <tr>
+                    <td>
+                        <button>Register</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <br>
+        <br>
+        Have a Account <button><a routerLink="/sigin">Login</a></button> -->
+
+<!-- 
+    </div>
+</div> -->
+
+<div>
+    <h1>Registration Page</h1>
+</div><br><br>
+
+<div class="row">
+    <div class="col-6"><img class="image" src="https://st.focusedcollection.com/9163412/i/650/focused_241470046-stock-photo-handsome-african-american-man-trendy.jpg"></div>
+    <div class="col-6">
+        <form #registerForm="ngForm" (ngSubmit)="register(registerForm.value)">
+            <div class="mb-3">
+              <label  class="form-label">Enter First Name:</label>
+              <input type="text" class="form-control" name="fName" placeholder="Enter Your FirstName" #fName="ngModel" pattern='^([A-Z][a-z]*)$' ngModel  required >
+        
+              
+              <div *ngIf="fName.touched">
+                <p *ngIf="fName.errors?.required" style="color: red;">
+                  fName is a required field!
+                </p>
+                <p *ngIf="fName.errors?.pattern" style="color: red;">
+                  Enter a valid fName!
+                </p>
+                <p class="text-danger" *ngIf="fName.errors?.minlength">
+                  fName must be atleast 3 characters!
+                </p>
+                <p class="text-danger" *ngIf="fName.errors?.maxlength">
+                  fName must be lessthan 30 characters!
+                </p>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label  class="form-label">Enter Last Name:</label>
+              <input type="text" class="form-control" required ngModel name="lName" placeholder="Enter Your LastName" #lname='ngModel'  pattern = '^([a-z]*)$'>
+              <div *ngIf="!lname.valid && lname.touched">
+                <p style="color:red;">LastName is required</p>
+
+
+              </div>
+              
+              
+            </div>
+            <div class="mb-3">
+                <label  class="form-label">Enter EmailId:</label>
+                <input type="email" class="form-control" required ngModel name="mailId" placeholder="Enter Your EmailId" #email='ngModel' pattern="[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$">
+                <div *ngIf=" email.touched">
+                  <p *ngIf="email.errors?.required" style="color:red;">Email is required</p>
+                  <p *ngIf="email.errors?.pattern" style="color:red;">Email is not valid</p>
+  
+  
+                </div>
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label>Enter Age:</label>
+                <input type="text" class="form-control" required ngModel name="age" placeholder="Enter Your age" #Age='ngModel' pattern="[0-9]{1}[0-9]{0,2}">
+                <div *ngIf="Age.touched">
+                  <p *ngIf="Age.errors?.required" style="color: red;">
+                    Age is a required field!
+                  </p>
+                  <p *ngIf="Age.errors?.pattern" style="color: red;">
+                    This is not a valid Age!
+                  </p>
+                </div>
+                
+              </div>
+              <!-- <div class="form-check">
+                <input class="form-check-input" type="radio" ngModel name="gender" >
+                <label class="form-check-label">
+                  Male
+                </label>
+              </div> 
+              <div class="form-check">
+                <input class="form-check-input" type="radio" ngModel name="gender">
+                <label class="form-check-label">
+                  Female
+                </label>
+              </div>    -->
+              <div class="mb-3">
+                <label>Enter Address:</label>
+                <textarea class="form-control" required ngModel name="address" placeholder="Enter Your Address" rows="3" #address='ngModel'></textarea>
+                <div *ngIf="!address.valid && address.touched">
+                  <p style="color:red;">Address is required</p>
+  
+  
+                </div>
+              </div>
+              <div class="mb-3">
+                <label>Enter Phone Number:</label>
+                <input type="text" class="form-control" ngModel name="contactNumber" placeholder="Enter Phone Number" #contactNumber='ngModel' pattern="^[6-9][0-9]{9}$" minlength="10" maxlength="10" required>
+                <div *ngIf="contactNumber.touched">
+                  <p *ngIf="contactNumber.errors?.required" style="color: red;">
+                    Contact Number is a required field!
+                  </p>
+                  <p *ngIf="contactNumber.errors?.pattern" style="color: red;">
+                    This is not a valid Contact Number!
+                  </p>
+                </div>
+              </div>
+              
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <input type="password" class="form-control" required ngModel name="password" placeholder="Create Password" #pass='ngModel' pattern="^(?=.*[0-9])(?=.*[- ?!@#$%^&*\/\\])(?=.*[A-Z])(?=.*[a-z])[a-zA-Z0-9- ?!@#$%^&*\/\\]{8,30}$">
+              <div *ngIf="pass.touched">
+                <p *ngIf="pass.errors?.required" style="color: red;">Password is required</p>
+                <p *ngIf="pass.errors?.pattern" style="color: red;">Password Must Contain 1 caps 1 specila character and 1 number</p>
+    
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Confirm Password:</label>
+              <input type="password" class="form-control" required ngModel name="confirmPassword" placeholder="Confirm Password" #cpass='ngModel'>
+              <div *ngIf="!cpass.value && cpass.touched">
+                <p style="color: red;">Confirm Password must equal to Password</p>
+    
+              </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
+          </form>
+          Have a Account <button type="button" class="btn btn-dark" ><a routerLink="/sigin">Login</a></button>
+
+    </div>

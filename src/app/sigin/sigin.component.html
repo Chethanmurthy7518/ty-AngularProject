@@ -1,2 +1,66 @@
-<h1>This Is from the new Component</h1>
-h
+<div>
+  <h1>Login Page</h1>
+</div><br><br>
+
+<div class="row ">
+
+  <div class="col-6 col-md-5 m-auto">
+    <div class="pad"> 
+      <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+        <div class="mb-3 m-auto">
+          <label class="form-label">Enter the UserName</label>
+          <input type="text" class="form-control" required ngModel name="username" placeholder="Enter UserName" #Name='ngModel'>
+          <div *ngIf="!Name.valid">
+            <p style="color:red;">This Field required</p>
+
+          </div>
+          <div *ngIf="Name.touched">
+            <p style="color: green;">Touched</p>
+          </div>
+          <div *ngIf="Name.untouched">
+            <p style="color: greenyellow;">UnTouched</p>
+          </div>
+
+        </div>
+        <div class="mb-3  ">
+          <label for="exampleInputPassword1" class="form-label">Enter the Password</label>
+          <input type="password" class="form-control" required ngModel name="password" placeholder="Enter Password" #pass='ngModel'>
+          <div *ngIf="!pass.value && pass.touched">
+            <p style="color: red;">Password Incorrect</p>
+
+          </div>
+        </div>
+
+        <button class="btn btn-primary">Login</button>
+      </form>
+    </div>
+
+
+    Dont have a Account<button type="button" class="btn btn-dark"><a routerLink="/register"> Registration</a></button>
+
+    <!-- <div class="card " style="width: 25rem;"> -->
+    <!-- <h1>Login Page</h1> -->
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <!-- <i class="far fa-user fa-5x"></i> -->
+    <!-- <div class="card-body"> -->
+
+
+    <!-- <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)"> -->
+    <!-- <label>Enter UserName:</label> -->
+    <!-- <input type="text" ngModel name="username" placeholder="Enter UserName"><br><br> -->
+    <!-- <label>Enter the Password:</label> -->
+    <!-- <input type="password" ngModel name="password" placeholder="Enter Password"><br><br> -->
+    <!-- <button>LogIn</button> -->
+    <!-- </form> -->
+    <!-- <br> -->
+    <!-- <br>/ -->
+    <!-- Dont have a Account<button><a routerLink="/register"> Registration</a></button> -->
+
+
+    <!-- </div> -->
+    <!-- </div> -->
+  </div>
+  <div class="col-6"><img class="image"
+      src="https://www.kindpng.com/picc/m/1-17962_man-standing-png-transparent-png.png" alt="" width="700px"
+      height="400px"></div>
+</div>

@@ -1,0 +1,101 @@
+<div class="row ">
+
+    <div class="col-6 col-md-5 m-auto">
+        <div class="pad">
+            <form #dataForm="ngForm" (ngSubmit)="addData(dataForm.value)">
+                <div class="mb-3 m-auto">
+                    <label class="form-label">Enter the Name</label>
+                    <input type="text" class="form-control" ngModel name="name"  
+                        placeholder="Enter Name">
+                   
+
+                </div>
+                <div class="mb-3  ">
+                    <label class="form-label">Enter the Image url</label>
+                    <input type="text" class="form-control" ngModel name="image"
+                        placeholder="Enter url">
+                    
+                </div>
+                <div class="mb-3  ">
+                    <label class="form-label">Enter the Price</label>
+                    <input type="number" class="form-control" ngModel name="price"
+                        placeholder="Enter Price">
+                    
+                </div>
+                <div class="mb-3  ">
+                    <label class="form-label">Enter the Colour</label>
+                    <input type="text" class="form-control" ngModel name="color"
+                        placeholder="Enter Colour">
+                    
+                </div>
+
+                <button class="btn btn-primary">Submit Data</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<h1>Data</h1>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Image</th>
+                <th scope="col">Price</th>
+                <th scope="col">Color</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let produc of products">
+            <tr>
+                <td>{{produc.name}}</td>
+                <td><img src="{{produc.image}}" alt="" width="200px"></td>
+                <td>{{produc.price}}</td>
+                <td>{{produc.color}}</td>
+                <td><button type="button" (click)="delete(produc.name)">DELETE</button><button class="btn btn-primary">Edit Data</button></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+
+</div>
+
+<!-- <div class="row ">
+
+    <div class="col-6 col-md-5 m-auto">
+        <div class="pad">
+            <form #editForm="ngForm" (ngSubmit)="editData(editForm.value)">
+                <div class="mb-3 m-auto">
+                    <label class="form-label">Enter the Name</label>
+                    <input type="text" class="form-control" ngModel name="name"  
+                        placeholder="Enter Name">
+                   
+
+                </div>
+                <div class="mb-3  ">
+                    <label class="form-label">Enter the Image url</label>
+                    <input type="text" class="form-control" ngModel name="image"
+                        placeholder="Enter url">
+                    
+                </div>
+                <div class="mb-3  ">
+                    <label class="form-label">Enter the Price</label>
+                    <input type="number" class="form-control" ngModel name="price"
+                        placeholder="Enter Price">
+                    
+                </div>
+                <div class="mb-3  ">
+                    <label class="form-label">Enter the Colour</label>
+                    <input type="text" class="form-control" ngModel name="color"
+                        placeholder="Enter Colour">
+                    
+                </div>
+
+                
+            </form>
+        </div>
+    </div>
+</div> -->

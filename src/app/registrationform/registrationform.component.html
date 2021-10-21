@@ -1,0 +1,61 @@
+<div class="col-6 col-md-5 m-auto">
+    <form #RegisterForm="ngForm" (ngSubmit)="onRegister(RegisterForm.value)">
+        <div class="mb-3">
+          <label  class="form-label">Enter Full Name:</label>
+          <input type="text" class="form-control" name="fullName" placeholder="Enter Your FullName" #fullName="ngModel" pattern='^([A-Z][a-z]*)$' ngModel  required >
+    
+          
+          <div *ngIf="fullName.touched">
+            <p *ngIf="fullName.errors?.required" style="color: red;">
+              fullName is a required field!
+            </p>
+            <p *ngIf="fullName.errors?.pattern" style="color: red;">
+              Enter a valid fullName!
+            </p>
+            <p class="text-danger" *ngIf="fullName.errors?.minlength">
+              fullName must be atleast 3 characters!
+            </p>
+            <p class="text-danger" *ngIf="fullName.errors?.maxlength">
+              fullName must be lessthan 30 characters!
+            </p>
+          </div>
+        </div>
+       
+        <div class="mb-3">
+            <label  class="form-label">Enter EmailId:</label>
+            <input type="email" class="form-control" required ngModel name="email" placeholder="Enter Your EmailId" #email='ngModel' pattern="[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$">
+            <div *ngIf=" email.touched">
+              <p *ngIf="email.errors?.required" style="color:red;">Email is required</p>
+              <p *ngIf="email.errors?.pattern" style="color:red;">Email is not valid</p>
+
+
+            </div>
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          
+          
+         
+          
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" required ngModel name="password" placeholder="Create Password" #pass='ngModel' pattern="^(?=.*[0-9])(?=.*[- ?!@#$%^&*\/\\])(?=.*[A-Z])(?=.*[a-z])[a-zA-Z0-9- ?!@#$%^&*\/\\]{8,30}$">
+          <!-- <div *ngIf="pass.touched">
+            <p *ngIf="pass.errors?.required" style="color: red;">Password is required</p>
+            <p *ngIf="pass.errors?.pattern" style="color: red;">Password Must Contain 1 caps 1 specila character and 1 number</p>
+
+          </div> -->
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Roll</label><br>
+            <input type="radio" name="role"  value="admin" ngModel>
+            Admin
+            <input type="radio"  name="role"  value="user" ngModel>
+            User
+        
+          </div>
+        
+        
+        <button type="submit" class="btn btn-primary" >Register</button>
+        <!-- [disabled]="!registerForm.valid" -->
+      </form>
+</div>
