@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core";
 import {Routes, RouterModule } from "@angular/router";
 import { AddProductsComponent } from "./add-products/add-products.component";
+import { AdminGuard } from "./admin.guard";
 // import { DataComponent } from "./data/data.component";
 // import { ChildComponent } from "./child/child.component";
 import { HomeComponent } from "./home/home.component";
@@ -24,7 +25,7 @@ const routes:Routes = [
     {path:"reactive",component:ReactiveComponent},
     {path:"httpclient",component:HttpclientComponent},
     // {path:"data",component:DataComponent},
-    {path:"product",component:ProductComponent},
+    {path:"product",component:ProductComponent,canActivate:[AdminGuard],data:{roles:['admin','user']}},
     {path:"add-products",component:AddProductsComponent},
     {path:"loginform",component:LoginformComponent},
     {path:"registrationform",component:RegistrationformComponent}

@@ -1,14 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { ProductComponent } from './product/product.component';
 
-interface user {
-  id
-  email
-  first_name
-  last_name
-  avatar
-
+interface Products{
+  _id:string;
+  productName:string;
+  productImageURL:string;
+  productDescription:string
 }
 
 @Injectable({
@@ -31,16 +30,28 @@ export class SeriviceService {
   readData(){
     return this.http.get < {
       data:any[]
-    } > (`https://ty-shop-token.herokuapp.com/api/products`)
+    } > (`${environment.baseUrl}/api/products/`)
+  }
+
+  addData(data){
+
+    return this.http.post<{
+      error:boolean,
+      message:string,
+      products:Products[]
+      
+    }>
+      (`${environment.baseUrl}/api/products/`,data)
   }
 
   deleteData(i){
-    this.http.get<{
+   return this.http.delete<{
       error:boolean,
-      message:string,
-      users:user[]
+      message:string
+      
+      
 
-    }>(`${environment.baseUrl}${i}`)
+    }>(`${environment.baseUrl}/api/products/${i}`)
   }
 
 

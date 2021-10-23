@@ -17,8 +17,12 @@ export class AuthService {
    return this.http.post(`${environment.tokenURL}/api/users/login`,data)
   }
 
-  getToken(){
+  getUserDetails(){
     console.log("Token",localStorage.getItem('UserDetails'));
-    
+    let userDeatils= JSON.parse(localStorage.getItem('UserDetails'));
+
+    if(userDeatils){
+      return userDeatils
+    }
   }
 }

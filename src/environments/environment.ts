@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl:"https://ty-shop-token.herokuapp.com",
-  tokenURL:"http://ty-shop-token.herokuapp.com"
+  baseUrl:"https://ty-shop.herokuapp.com"
+  // tokenURL:"http://ty-shop-token.herokuapp.com"
 };
 
 /*

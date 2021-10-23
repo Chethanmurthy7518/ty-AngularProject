@@ -21,15 +21,24 @@ export class ProductComponent implements OnInit {
     })
   }
 
-  delete(data) {
-    console.log(data);
-    let alert = confirm("Want to delete")
-    if (alert) {
-      const index = this.datas.products.indexOf(data);
-      this.datas.products.splice(index, 1);
+  add(data){
+    // console.log(data);
+    this.ProductService.addData(data).subscribe((response)=>{
+      console.log(response)
 
-      // this.datas.data.splice(data,1)
-    }
+    })
+
+  }
+
+  delete(id) {
+    console.log(id);
+    let alert = confirm("Want to delete")
+    this.ProductService.deleteData(id).subscribe(response =>{
+      console.log(response)
+    })
+    this.getData()
+    console.log(id)
+     
   }
 
 }
