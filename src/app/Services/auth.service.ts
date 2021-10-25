@@ -10,11 +10,11 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 
   register(data){
-   return this.http.post(`${environment.tokenURL}/api/users/register`,data)
+   return this.http.post(`${environment.baseUrl}/api/users/register`,data)
   }
 
   login(data){
-   return this.http.post(`${environment.tokenURL}/api/users/login`,data)
+   return this.http.post(`${environment.baseUrl}/api/users/login`,data)
   }
 
   getUserDetails(){

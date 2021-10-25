@@ -54,5 +54,10 @@ export class SeriviceService {
     }>(`${environment.baseUrl}/api/products/${i}`)
   }
 
+  isAdmin(){
+    let userDeatils=JSON.parse(localStorage.getItem('UserDetails'))
+    return userDeatils.role === "admin"
+  }
+
 
 }

@@ -16,9 +16,11 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/product">Products</a>
       </li>
-      <li class="nav-item">
+      
+      <li class="nav-item" >
         <a class="nav-link" data-toggle="modal" data-target="#modalSubscriptionForm">ADD Products</a>
       </li>
+    
     </ul>
 
   </div>
@@ -90,9 +92,12 @@
     <div class="card-body">
       <h5 class="card-title">{{data.productName}}</h5>
       <p class="card-text">Rs.{{data.productPrice}}</p>
-      <button type="button" class="btn btn-outline-primary" style="float: left;" data-toggle="modal"
-        data-target="modalSubscriptionForm">Edit</button>
-      <button type="button" class="btn btn-outline-warning" (click)="delete(data._id)" style="float: right;">Delete</button>
+      <div *ngIf="ProductService.isAdmin()" >
+        <button type="button" class="btn btn-outline-primary" style="float: left;" data-toggle="modal"
+          data-target="modalSubscriptionForm">Edit</button>
+        <button type="button" class="btn btn-outline-warning" (click)="delete(data._id)"
+          style="float: right;">Delete</button>
+      </div>
     </div>
   </div>
 </div>
