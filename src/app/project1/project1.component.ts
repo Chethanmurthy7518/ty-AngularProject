@@ -12,6 +12,7 @@ export class Project1Component implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  
   }
 
 }

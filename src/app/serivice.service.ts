@@ -30,7 +30,7 @@ export class SeriviceService {
   readData(){
     return this.http.get < {
       data:any[]
-    } > (`${environment.baseUrl}/api/products/`)
+    } > (`${environment.baseUrl}/products/products`)
   }
 
   addData(data){
@@ -41,7 +41,7 @@ export class SeriviceService {
       products:Products[]
       
     }>
-      (`${environment.baseUrl}/api/products/`,data)
+      (`${environment.baseUrl}/products/add-product/`,data)
   }
 
   deleteData(i){
@@ -51,7 +51,7 @@ export class SeriviceService {
       
       
 
-    }>(`${environment.baseUrl}/api/products/${i}`)
+    }>(`${environment.baseUrl}/products/delete-product/${i}`)
   }
 
   isAdmin(){

@@ -31,11 +31,11 @@ export class ChildComponent implements OnInit,OnChanges,AfterViewInit{
   ngOnInit(): void {
     // this.value="Happy Desehra From Child"
    
-    // this.div.nativeElement.style.color = "blue"  ----Th view will ot execute on OnInt
+    // this.div.nativeElement.style.color = "blue"  ----The view will ot execute on OnInt
 
   }
   ngOnChanges(changes:SimpleChanges){
-    // this.div.nativeElement.style.color = "blue" ----Th view will ot execute on OnChanges
+    // this.div.nativeElement.style.color = "blue" ----The view will ot execute on OnChanges
 
 
   }
@@ -45,6 +45,7 @@ export class ChildComponent implements OnInit,OnChanges,AfterViewInit{
     // this.div.nativeElement.style.color = "blue";
     // this.div.nativeElement.innerHTML = "HIIIII";
     this.div.nativeElement.classList ="style";
+    
   
     
 

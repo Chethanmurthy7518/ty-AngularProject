@@ -3,8 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  baseUrl:"https://ty-shop.herokuapp.com"
+  production: false,  
+  // baseUrl:"https://ty-shop.herokuapp.com"
+  baseUrl:"http://localhost:3000"
   // tokenURL:"http://ty-shop-token.herokuapp.com"
 };
 

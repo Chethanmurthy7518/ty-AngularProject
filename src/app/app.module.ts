@@ -17,12 +17,13 @@ import { HomeComponent } from './home/home.component';
 // import { RouterModule,Routes } from '@angular/router';
 
 import { ReactiveComponent } from './reactive/reactive.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpclientComponent } from './httpclient/httpclient.component';
 import { ProductComponent } from './product/product.component';
 import { AddProductsComponent } from './add-products/add-products.component';
 import { LoginformComponent } from './loginform/loginform.component';
 import { RegistrationformComponent } from './registrationform/registrationform.component'
+import { AuthorizationInterceptor } from './interseptors/authorization-interceptor';
 
 // import { DataComponent } from './data/data.component';
 
@@ -62,7 +63,13 @@ import { RegistrationformComponent } from './registrationform/registrationform.c
     HttpClientModule
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthorizationInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

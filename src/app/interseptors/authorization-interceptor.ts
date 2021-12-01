@@ -11,13 +11,10 @@ export class AuthorizationInterceptor implements HttpInterceptor{
         const modifiedRequest = request.clone({
             headers:request.headers.append(
                 'authorization',
-                `bearer:${this.auth.getUserDetails()}`
-
-
+                `Bearer ${this.auth.getToken()}`
             )
         });
         return handler.handle(modifiedRequest)
     }
-    
 
 }

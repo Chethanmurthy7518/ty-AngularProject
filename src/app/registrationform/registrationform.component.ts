@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../Services/auth.service';
 
 @Component({
@@ -7,6 +8,7 @@ import { AuthService } from '../Services/auth.service';
   styleUrls: ['./registrationform.component.css']
 })
 export class RegistrationformComponent implements OnInit {
+  router: any;
 
   constructor(private authService:AuthService) { }
 
@@ -17,8 +19,11 @@ export class RegistrationformComponent implements OnInit {
     console.log(form);
     this.authService.register(form).subscribe(response =>{
       console.log(response)
+      this.router.navigate(['loginform'])
 
     })
+    
+
   }
 
 }
